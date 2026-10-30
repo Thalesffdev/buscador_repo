@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontre repositórios públicos do GitHub por palavra-chave e descubra projetos populares organizados por estrelas.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f1f4f8">
+    <meta property="og:title" content="Buscador de repositórios GitHub">
+    <meta property="og:description" content="Encontre repositórios públicos do GitHub por palavra-chave e descubra projetos populares.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Buscador de repositórios GitHub">
+    <meta name="twitter:description" content="Encontre repositórios públicos do GitHub por palavra-chave e descubra projetos populares.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <title>Buscador de repositórios GitHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <a class="cabecalho__marca" href="./" aria-label="Buscador GitHub, página inicial">
+        <img src="assets/favicon.svg" alt="" width="32" height="32">
+        <span>Buscador GitHub</span>
+      </a>
+    </header>
+
+    <main class="conteudo">
+      <section class="cartao-busca" aria-labelledby="titulo-principal">
+        <p class="cartao-busca__etiqueta">Descubra projetos de código aberto</p>
+        <h1 id="titulo-principal">Buscador de repositórios GitHub</h1>
+        <p class="cartao-busca__descricao">Encontre repositórios públicos por palavra-chave, ordenados pelos mais estrelados.</p>
+
+        <form id="formulario-busca" class="formulario-busca" novalidate>
+          <label class="oculto-visualmente" for="campo-busca">Termo para buscar repositórios</label>
+          <input
+            id="campo-busca"
+            class="formulario-busca__campo"
+            name="termo"
+            type="search"
+            placeholder="Ex.: react, javascript, api"
+            autocomplete="off"
+            aria-describedby="mensagem-validacao"
+            aria-required="true"
+          >
+          <button id="botao-buscar" class="botao-busca" type="submit">
+            Buscar
+          </button>
+          <span id="mensagem-validacao" class="mensagem-validacao" role="alert" hidden></span>
+        </form>
+      </section>
+
+      <section class="area-resultados" aria-labelledby="titulo-resultados">
+        <h2 id="titulo-resultados" class="oculto-visualmente">Resultados da busca</h2>
+        <p id="estado-carregamento" class="estado estado--carregando" role="status" hidden>
+          <span class="indicador-carregamento" aria-hidden="true"></span>
+          Carregando resultados...
+        </p>
+        <p id="estado-inicial" class="estado estado--inicial">
+          <span class="estado__icone" aria-hidden="true">⌕</span>
+          Digite uma palavra-chave para encontrar repositórios.
+        </p>
+        <p id="estado-vazio" class="estado estado--vazio" hidden>
+          <span class="estado__icone" aria-hidden="true">⌕</span>
+          <span id="mensagem-vazia"></span>
+          <span class="estado__ajuda">Tente outro termo para encontrar mais projetos.</span>
+        </p>
+        <div id="estado-erro" class="estado estado--erro" role="alert" hidden>
+          <p id="mensagem-erro"></p>
+          <button id="botao-tentar-novamente" class="botao-secundario" type="button">Tentar novamente</button>
+        </div>
+        <p id="contador-resultados" class="contador-resultados" aria-live="polite" hidden></p>
+        <ul id="lista-repositorios" class="lista-repositorios" aria-live="polite" hidden></ul>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>Dados fornecidos pela API pública do GitHub.</p>
+    </footer>
+  </body>
+</html>
