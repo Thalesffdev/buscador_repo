@@ -103,7 +103,7 @@ buscador-github/
 ├── js/
 │   └── main.js
 ├── assets/
-│   └── favicon.svg
+│   
 └── README.md
 ```
 
