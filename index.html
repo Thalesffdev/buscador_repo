@@ -29,7 +29,7 @@
       <section class="cartao-busca" aria-labelledby="titulo-principal">
         <p class="cartao-busca__etiqueta">Descubra projetos de código aberto</p>
         <h1 id="titulo-principal">Buscador de repositórios GitHub</h1>
-        <p class="cartao-busca__descricao">Encontre repositórios públicos por palavra-chave, ordenados pelos mais estrelados.</p>
+        <p class="cartao-busca__descricao">Encontre até 10 repositórios públicos por palavra-chave, ordenados pelos mais estrelados.</p>
 
         <form id="formulario-busca" class="formulario-busca" novalidate>
           <label class="oculto-visualmente" for="campo-busca">Termo para buscar repositórios</label>
@@ -38,7 +38,7 @@
             class="formulario-busca__campo"
             name="termo"
             type="search"
-            placeholder="Ex.: react, javascript, api"
+            placeholder="Ex: react, javascript, api"
             autocomplete="off"
             aria-describedby="mensagem-validacao"
             aria-required="true"
@@ -77,5 +77,30 @@
     <footer class="rodape">
       <p>Dados fornecidos pela API pública do GitHub.</p>
     </footer>
+
+    <button
+      id="botao-voltar-ao-topo"
+      class="botao-voltar-ao-topo"
+      type="button"
+      aria-label="To the Top"
+      title="To the Top"
+      aria-hidden="true"
+    >
+      <svg
+        class="botao-voltar-ao-topo__icone"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M12 19V5m-7 7 7-7 7 7"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
   </body>
 </html>
